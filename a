@@ -1,0 +1,122 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("TOA Piece", "DarkTheme")
+local Tab = Window:NewTab("auto farm")
+local Section = Tab:NewSection("auto farm")
+Section:NewDropdown("auto farm mob", "auto farm", {"Bandit", "Bandit Sand", "Bandit Sky","Bandit Tree","Wtop","Jop","GOK:) :) :)","Boat Soldier","Bubble Head"}, function(wa)
+    _G.mob = wa 
+    _G.mob2 = 1
+end)
+Section:NewDropdown("auto farm boss", "auto farm", {"GOK:) :) :) Boss", "Noob", "White beard","Bandit Sky Boss","Jungle Thief","Jop Boss","Bubble Boss"}, function(er)
+    _G.mob = er
+    _G.mob2 = 0
+end)
+
+Section:NewToggle("auto farm", "auto farm", function(state)
+    if state then
+        if _G.mob2 == 1 then
+        _G.autopiecet = true
+        if not game.Players.LocalPlayer.Character["Right Arm"]:FindFirstChild("1") then
+game.Players.LocalPlayer.Character["Right Arm"].TouchInterest.Name = 1
+
+local v = game:GetService'Players'.LocalPlayer.Backpack.ComBat
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+task.wait()
+local tool = game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool:Activate()
+task.wait(0.5)
+end
+while _G.autopiecet do  task.wait(0.1)
+    pcall(function()
+for _, v in pairs(game:GetService("Workspace").Monster[_G.mob]:GetChildren()) do
+    if not game.Players.LocalPlayer.Character["Right Arm"]:FindFirstChild("1") then
+game.Players.LocalPlayer.Character["Right Arm"].TouchInterest.Name = 1
+
+local v = game:GetService'Players'.LocalPlayer.Backpack.ComBat
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+task.wait()
+local tool = game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool:Activate()
+task.wait(0.1)
+end
+    if game:GetService'Players'.LocalPlayer.Backpack:FindFirstChild("ComBat") then
+        local v = game:GetService'Players'.LocalPlayer.Backpack.ComBat
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+        end
+    if v:FindFirstChild("HumanoidRootPart") then
+        repeat
+firetouchinterest(v.HumanoidRootPart,game.Players.LocalPlayer.Character["Right Arm"],0)
+local tool = game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool:Activate()
+firetouchinterest(v.HumanoidRootPart,game.Players.LocalPlayer.Character["Right Arm"],1)
+task.wait(0.03)
+until v.Humanoid.Health == 0 or not v:FindFirstChild("Humanoid") or not game:GetService'Players'.LocalPlayer.Character:FindFirstChild("ComBat") or not _G.autopiece
+end
+end
+end)
+end
+
+elseif _G.mob2 == 0 then
+    _G.autopiecet = true
+        if not game.Players.LocalPlayer.Character["Right Arm"]:FindFirstChild("1") then
+game.Players.LocalPlayer.Character["Right Arm"].TouchInterest.Name = 1
+
+local v = game:GetService'Players'.LocalPlayer.Backpack.ComBat
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+task.wait()
+local tool = game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool:Activate()
+task.wait(0.5)
+end
+while _G.autopiecet do  task.wait(0.1)
+    pcall(function()
+for _, v in pairs(game:GetService("Workspace").Monster.Boss:GetChildren()) do
+    if v.Name ==  _G.mob then
+    if not game.Players.LocalPlayer.Character["Right Arm"]:FindFirstChild("1") then
+game.Players.LocalPlayer.Character["Right Arm"].TouchInterest.Name = 1
+
+local v = game:GetService'Players'.LocalPlayer.Backpack.ComBat
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+task.wait()
+local tool = game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool:Activate()
+task.wait(0.1)
+end
+    if game:GetService'Players'.LocalPlayer.Backpack:FindFirstChild("ComBat") then
+        local v = game:GetService'Players'.LocalPlayer.Backpack.ComBat
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+        end
+    if v:FindFirstChild("HumanoidRootPart") then
+        repeat
+firetouchinterest(v.HumanoidRootPart,game.Players.LocalPlayer.Character["Right Arm"],0)
+local tool = game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool")
+tool:Activate()
+firetouchinterest(v.HumanoidRootPart,game.Players.LocalPlayer.Character["Right Arm"],1)
+task.wait(0.03)
+until v.Humanoid.Health == 0 or not v:FindFirstChild("Humanoid") or not game:GetService'Players'.LocalPlayer.Character:FindFirstChild("ComBat") or not _G.autopiece
+end
+end
+end
+end)
+end
+end
+    else
+        _G.autopiecet = false
+    end
+end)
+local Tab = Window:NewTab("etc")
+local Section = Tab:NewSection("Glue")
+Section:NewButton("bring all Glue", "being Glue", function()
+    
+      for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+            if v:IsA("Tool") then
+              game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+        end
+        end
+end)
+local Section = Tab:NewSection("tp Island")
+Section:NewButton("start Island", "goto Island", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(144, 25, -244)
+end)
+Section:NewButton("jungle Island", "goto Island", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1132.91003, 25, -617.18689)
+end)
